@@ -57,3 +57,19 @@ const generateIntern = function (intern) {
     </div>
     `;
 };
+
+/* Function to input employee cards into an array that will be called*/
+
+generatePage = function (data) {
+    let pageArray = [];
+
+    for(let i = 0; i < data.length; i++){
+        const employees = data[i];
+        const roles = employees.renderRole();
+
+        if(roles === 'Manager') {
+            const managerCard = generateManager(employee);
+            pageArray.push(managerCard);
+        }
+    }
+}
