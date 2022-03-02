@@ -68,8 +68,18 @@ generatePage = function (data) {
         const roles = employees.renderRole();
 
         if(roles === 'Manager') {
-            const managerCard = generateManager(employee);
+            const managerCard = generateManager(employees);
             pageArray.push(managerCard);
+        }
+
+        if(roles = 'Engineer') {
+            const engineerCard = generateEngineer(employees);
+            pageArray.push(engineerCard);
+        }
+
+        if(roles = 'Intern') {
+            const internCard = generateIntern(employees);
+            pageArray.push(internCard);
         }
     }
 }
