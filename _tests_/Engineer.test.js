@@ -5,7 +5,7 @@ describe('Engineer', () => {
     test('should generate engineer object', () => {
         const engineer = new Engineer("Nadira", 11, "nadira.ali@gmailtemplate.com", 'Nali3107');
 
-        expect(engineer.gitUsername) .toEqual(expect.any(String));
+        expect(engineer.gitUsername).toEqual(expect.any(String));
     });
 
     test('should generate employee github username', () => {
