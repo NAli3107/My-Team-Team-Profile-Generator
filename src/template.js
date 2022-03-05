@@ -4,7 +4,7 @@ const generatePage = function (data) {
 
 const generateManager = (manager) => {
   return `
-    <div class="col-sm-4">
+    <div class="col-sm-4 mb-5">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
@@ -24,7 +24,7 @@ const generateManager = (manager) => {
 
 const generateEngineer = function (engineer) {
   return `
-      <div class="col-sm-4">
+      <div class="col-sm-4 mb-5">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${engineer.name}</h3>
@@ -44,7 +44,7 @@ const generateEngineer = function (engineer) {
 
 const generateIntern = function (intern) {
   return `
-    <div class="col-sm-4">
+    <div class="col-sm-4 mb-5">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${intern.name}</h3>
