@@ -3,12 +3,12 @@
 }
 
 :root {
-    --primary: rgb(0, 128, 111);
+    --primary: rgb(19, 131, 116);
     --secondary: white;
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-family: 'Pacifico', cursive; 
 }
 
 #navbar {
@@ -29,7 +29,7 @@ body {
 
 .card-body {
     background-color: var(--secondary);
-    color: var(--primary);
+    color: black;
 }
 
 .container {
