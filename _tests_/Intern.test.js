@@ -2,12 +2,6 @@
 const Intern = require('../lib/Intern');
 
 describe('Intern', () => {
-    test('should generate intern object', () => {
-        const intern = new Intern("Nadira", 11, "nadira.ali@gmailtemplate.com", 'UOB');
-
-        expect(intern.renderSchool).toEqual(expect.any(String));
-    });
-
     test('should generate employee school', () => {
         const intern = new Intern("Nadira", 11, "nadira.ali@gmailtemplate.com", 'UOB');
 

@@ -3,11 +3,8 @@ const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
   test("should generate employee object", () => {
-    const employee = new Employee("Nadira", 11, "nadira.ali@gmailtemplate.com");
-
-    expect(employee.name).toEqual(expect.any(String));
-    expect(employee.id).toEqual(expect.any(Number));
-    expect(employee.email).toEqual(expect.any(String));
+    const employee = new Employee();
+    expect(typeof(employee)).toBe("object")
   });
 
   test("should generate employee name when renderName() function is called", () => {

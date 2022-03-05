@@ -5,7 +5,7 @@ describe('Manager', () => {
     test('should generate manager object with office number', () => {
         const manager = new Manager("Nadira", 11, "nadira.ali@gmailtemplate.com", '12345');
 
-        expect(manager.renderOfficeNumber).toEqual(expect.any(Number));
+        expect(manager.renderOfficeNumber).toEqual('12345');
     });
 
     test('should generate employee role', () => {
