@@ -58,14 +58,15 @@ function renderTeam() {
       },
     ])
     .then((answers) => {
-      if (answers.teamMembersArray[0] === "Engineer") {
+      if (answers.roles === "Engineer") {
         engineerPrompts();
-      } else if (answers.teamMembersArray[0] === "Intern") {
+      } else if (answers.roles === "Intern") {
         internPrompts();
       } else {
-        return console.log("rendering HTML...");
+        writeFile();
       }
     });
+  }
 
   /* Prompts for engineer */
 
@@ -143,8 +144,8 @@ function renderTeam() {
       });
   }
 
-  const writeFile = (data) => {
-    fs.writeFile("./dist/index.html", data, (err) => {
+  const writeFile = () => {
+    fs.writeFileSync("./dist/index.html", renderHTML(teamMembersArray), (err) => {
       if (err) {
         console.log(err);
         return;
@@ -155,15 +156,15 @@ function renderTeam() {
   };
 
 managerPrompts()
-  .then(renderTeam)
-  .then((teamMembersArray) => {
-    return renderHTML(teamMembersArray);
-  })
-  .then((pageHTML) => {
-    return writeFile(pageHTML);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  // .then(renderTeam)
+  // .then((teamMembersArray) => {
+  //   return renderHTML(teamMembersArray);
+  // })
+  // .then((pageHTML) => {
+  //   return writeFile(pageHTML);
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // });
 
-}
+
