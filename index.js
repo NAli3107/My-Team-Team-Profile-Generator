@@ -40,12 +40,12 @@ function managerPrompts() {
         answers.name,
         answers.id,
         answers.email,
-        answers.officeNumber
+        answers.officeNumber,
       );
       teamMembersArray.push(manager);
       renderTeam();
     });
-}
+};
 
 function renderTeam() {
   inquirer
@@ -66,105 +66,93 @@ function renderTeam() {
         writeFile();
       }
     });
-  }
+};
 
-  /* Prompts for engineer */
+/* Prompts for engineer */
 
-  function engineerPrompts() {
-    inquirer
-      .prompt([
-        {
-          type: "input",
-          name: "name",
-          message: " Please enter the engineer's name.",
-        },
-        {
-          type: "input",
-          name: "id",
-          message: "Please enter engineer's ID.",
-        },
-        {
-          type: "input",
-          name: "email",
-          message: "Please enter engineers's email.",
-        },
-        {
-          type: "input",
-          name: "gitUsername",
-          message: "Please enter engineer's GitHub Username.",
-        },
-      ])
-      .then((answers) => {
-        const engineer = new Engineer(
-          answers.name,
-          answers.id,
-          answers.email,
-          answers.gitUsername
-        );
-        teamMembersArray.push(engineer);
-        renderTeam();
-      });
-  }
+function engineerPrompts() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: " Please enter the engineer's name.",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Please enter engineer's ID.",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Please enter engineers's email.",
+      },
+      {
+        type: "input",
+        name: "gitUsername",
+        message: "Please enter engineer's GitHub Username.",
+      },
+    ])
+    .then((answers) => {
+      const engineer = new Engineer(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.gitUsername,
+      );
+      teamMembersArray.push(engineer);
+      renderTeam();
+    });
+}
 
 /* Prompts for intern */
 
-  function internPrompts() {
-    inquirer
-      .prompt([
-        {
-          type: "input",
-          name: "name",
-          message: " Please enter the intern's name.",
-        },
-        {
-          type: "input",
-          name: "id",
-          message: "Please enter intern's ID.",
-        },
-        {
-          type: "input",
-          name: "email",
-          message: "Please enter intern's email.",
-        },
-        {
-          type: "input",
-          name: "school",
-          message: "Please enter intern's school.",
-        },
-      ])
-      .then((answers) => {
-        const intern = new Intern(
-          answers.name,
-          answers.id,
-          answers.email,
-          answers.school
-        );
-        teamMembersArray.push(intern);
-        renderTeam();
-      });
-  }
-
-  const writeFile = () => {
-    fs.writeFileSync("./dist/index.html", renderHTML(teamMembersArray), (err) => {
-      if (err) {
-        console.log(err);
-        return;
-      } else {
-        console.log("Your team profile has been successfully created!");
-      }
+function internPrompts() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: " Please enter the intern's name.",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Please enter intern's ID.",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Please enter intern's email.",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "Please enter intern's school.",
+      },
+    ])
+    .then((answers) => {
+      const intern = new Intern(
+        answers.name,
+        answers.id,
+        answers.email,
+        answers.school,
+      );
+      teamMembersArray.push(intern);
+      renderTeam();
     });
-  };
+}
 
-managerPrompts()
-  // .then(renderTeam)
-  // .then((teamMembersArray) => {
-  //   return renderHTML(teamMembersArray);
-  // })
-  // .then((pageHTML) => {
-  //   return writeFile(pageHTML);
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  // });
+const writeFile = () => {
+  fs.writeFileSync("./dist/index.html", renderHTML(teamMembersArray), (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log("Your team profile has been successfully created!");
+    }
+  });
+};
 
-
+managerPrompts();
