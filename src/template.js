@@ -1,6 +1,8 @@
 /* Function to dynamically create the manager card. */
 
-const generateManager = function (manager) {
+const generatePage = function (data) {
+
+const generateManager = (manager) => {
   return `
     <div class="col-4 mt-4">
         <div class="card h-100">
@@ -60,7 +62,6 @@ const generateIntern = function (intern) {
 
 /* Function to input employee cards into an array that will be called*/
 
-generatePage = function (data) {
     let pageArray = [];
 
     for(let i = 0; i < data.length; i++){
@@ -72,26 +73,24 @@ generatePage = function (data) {
             pageArray.push(managerCard);
         }
 
-        if(roles = 'Engineer') {
+        if(roles === 'Engineer') {
             const engineerCard = generateEngineer(employees);
             pageArray.push(engineerCard);
         }
 
-        if(roles = 'Intern') {
+        if(roles === 'Intern') {
             const internCard = generateIntern(employees);
             pageArray.push(internCard);
         }
     }
 
-    const employeesCards = pageArray.join('');
-    const renderEmployees = generateHTML(employeesCards);
-
-    return renderEmployees;
+    return pageArray.join('');
 }
 
-/* Function to dynamically create html page. */
 
-const generateHTML = (employeesCards) => {
+/* Function to dynamically create html page which will be exported to other files. */
+
+module.exports = (renderEmployees) => {
     return `
     <!DOCTYPE html>
   <html lang="en">
@@ -115,7 +114,7 @@ const generateHTML = (employeesCards) => {
           <div class="container">
               <div class="row justify-content-center" id="employee-cards">
                   <!--Employee Cards-->
-                  ${employeesCards}
+                  ${generatePage(renderEmployees)}
               </div>
           </div>
       </main>
@@ -126,9 +125,5 @@ const generateHTML = (employeesCards) => {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </html>
 `;
+};
 
-}
-
-/* Export to allow access in other files. */
-
-module.exports = generatePage;
