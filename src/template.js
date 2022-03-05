@@ -111,7 +111,7 @@ module.exports = (renderEmployees) => {
           </nav>
       </header>
       <main>
-          <div class="container">
+          <div class="container-fluid">
               <div class="row justify-content-center" id="employee-cards">
                   <!--Employee Cards-->
                   ${generatePage(renderEmployees)}

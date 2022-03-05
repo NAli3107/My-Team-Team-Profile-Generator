@@ -15,12 +15,17 @@ body {
     background-color: var(--primary);
     color: var(--secondary);
     font-size: 50px;
+    border-bottom: solid black
 }
 
 .navbar-brand {
     font-size: 50px;
 }
 
+.card{
+    box-shadow:  5px 2px 10px rgb(37, 37, 37);
+    border: solid black
+}
 
 .card-header {
     background-color: var(--primary);
