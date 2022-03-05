@@ -4,7 +4,7 @@ const generatePage = function (data) {
 
 const generateManager = (manager) => {
   return `
-    <div class="col-4 mt-4">
+    <div class="col-sm-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
@@ -24,7 +24,7 @@ const generateManager = (manager) => {
 
 const generateEngineer = function (engineer) {
   return `
-      <div class="col-4 mt-4">
+      <div class="col-sm-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${engineer.name}</h3>
@@ -44,7 +44,7 @@ const generateEngineer = function (engineer) {
 
 const generateIntern = function (intern) {
   return `
-    <div class="col-4 mt-4">
+    <div class="col-sm-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${intern.name}</h3>
@@ -111,7 +111,7 @@ module.exports = (renderEmployees) => {
           </nav>
       </header>
       <main>
-          <div class="container-fluid">
+          <div class="container overflow-hidden">
               <div class="row justify-content-center" id="employee-cards">
                   <!--Employee Cards-->
                   ${generatePage(renderEmployees)}
