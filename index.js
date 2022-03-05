@@ -67,6 +67,8 @@ function renderTeam() {
       }
     });
 
+  /* Prompts for engineer */
+
   function engineerPrompts() {
     inquirer
       .prompt([
@@ -102,6 +104,8 @@ function renderTeam() {
         renderTeam();
       });
   }
+
+/* Prompts for intern */
 
   function internPrompts() {
     inquirer
@@ -149,7 +153,6 @@ function renderTeam() {
       }
     });
   };
-}
 
 managerPrompts()
   .then(renderTeam)
@@ -162,3 +165,5 @@ managerPrompts()
   .catch((err) => {
     console.log(err);
   });
+
+}

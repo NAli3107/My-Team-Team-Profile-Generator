@@ -11,7 +11,7 @@ describe('Intern', () => {
     test('should generate employee school', () => {
         const intern = new Intern("Nadira", 11, "nadira.ali@gmailtemplate.com", 'UOB');
 
-        expect(intern.renderSchool()).toEqual(expect.stringContaining(intern.renderSchool.toString()));
+        expect(intern.renderSchool()).toEqual("UOB");
     });
 
     test('should generate employee role', () => {
